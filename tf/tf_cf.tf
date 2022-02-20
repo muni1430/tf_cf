@@ -28,3 +28,24 @@ resource "aws_cloudformation_stack" "network" {
 }
 STACK
 }
+
+
+resource "aws_cloudformation_stack" "example" {
+  name = "example"
+  parameters = {
+    VpcId = var.vpc_id
+  }
+  template_body = file("${path.module}/example.yml")
+}
+
+
+
+
+
+
+
+
+
+
+
+
